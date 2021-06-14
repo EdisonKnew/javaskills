@@ -57,12 +57,6 @@ public class Main {
     return "index";
   }
 
-  @RequestMapping(value = "/datas",method = RequestMethod.GET)
-  @ResponseBody
-  JSONObject datas() throws JSONException {
-    return new JSONObject("{'aa':'bb'}");
-  }
-
   @RequestMapping("/db")
   String db(Map<String, Object> model) {
     try (Connection connection = dataSource.getConnection()) {
