@@ -18,6 +18,8 @@ package com.example;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
@@ -51,6 +53,11 @@ public class Main {
   @RequestMapping("/")
   String index() {
     return "index";
+  }
+
+  @RequestMapping("/datas")
+  JSONObject datas() throws JSONException {
+    return new JSONObject("{'aa':'bb'}");
   }
 
   @RequestMapping("/db")
